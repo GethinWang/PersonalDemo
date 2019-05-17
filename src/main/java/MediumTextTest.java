@@ -28,7 +28,7 @@ public class MediumTextTest {
             while (result.next()) {
                 mediumText = result.getString("content");
             }
-            BaseUtil64.generateImageByString(mediumText,"data\\blob3.jpg");
+            BaseUtil64.generateImageByString(mediumText,"data\\mediumText.jpg");
 
             JDBCUtil.closeConnection(connect);
         }catch (SQLException e){
