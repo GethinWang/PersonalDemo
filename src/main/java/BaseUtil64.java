@@ -5,7 +5,7 @@ import java.io.*;
 
 /**
  * Create by Gethin Wang on 2019/5/16
- * 用于将图片转换为Base64编码，或者将Base64编码解密为图片，可用于持久化图片
+ * 用于将图片转换为Base64编码，或者将Base64编码解密为图片，可用于持久化图片，需要去除开头data:image/png;base64,
  */
 
 public class BaseUtil64 {
