@@ -9,7 +9,7 @@ public class ReadTxt {
 
     public static void main(String args[]) {
         String content = readFile("C:\\Users\\10007886\\Desktop\\videoresourcePlayUrlAndSizeMapping.txt");
-        writeFile("C:\\Users\\10007886\\Desktop\\tmp.txt",content);
+        writeFile("C:\\Users\\10007886\\Desktop\\sql.txt",content);
     }
 
     /**
@@ -22,8 +22,10 @@ public class ReadTxt {
             BufferedReader br = new BufferedReader(reader);
 
             String line;
+            String sql = "update vod_stream set size = %s ,modify_instant = modify_instant where url = \"%s\";";
             while ((line = br.readLine()) != null) {
-                stringBuffer.append(line);
+                String[] params = line.split(",");
+                stringBuffer.append(String.format(sql,params[1],params[0]));
                 stringBuffer.append("\r\n");
                 System.out.println(line);
             }
